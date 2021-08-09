@@ -26,7 +26,7 @@ const useDashboard = () => {
         </Text>
       </View>
     );
-  }, []);
+  }, [colors.primary, colors.textPrimary]);
 
   const renderItem = useCallback(({ item }) => {
     <View />;
