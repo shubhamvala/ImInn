@@ -1,16 +1,3 @@
-import Strings from './Strings';
-
-const StaticData = {
-  loginTabData: [
-    {
-      id: 0,
-      title: Strings.login,
-    },
-    {
-      id: 1,
-      title: Strings.signUp,
-    },
-  ],
-};
+const StaticData = {};
 
 export default StaticData;

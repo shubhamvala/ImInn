@@ -16,6 +16,12 @@ import PlusTabIcon from './plusTab.svg';
 import Plus from './plus.svg';
 import Search from './search.svg';
 import EmptyDashboard from './emptyDashboard.svg';
+import Organizer from './organizer.svg';
+import Player from './player.svg';
+import SquareCheck from './squareCheck.svg';
+import SquareUncheck from './squareUncheck.svg';
+import Bell from './bell.svg';
+import DropDown from './dropdown.svg';
 
 export default {
   AppLogo,
@@ -36,4 +42,10 @@ export default {
   Plus,
   Search,
   EmptyDashboard,
+  Organizer,
+  Player,
+  SquareCheck,
+  SquareUncheck,
+  Bell,
+  DropDown,
 };

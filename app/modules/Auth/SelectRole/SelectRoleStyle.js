@@ -32,9 +32,11 @@ const styles = StyleSheet.create({
     fontSize: Fonts.size.h5,
   },
   roleImageContainer: {
+    flex: 1,
     width: '100%',
-    marginTop: verticalScale(50),
+    marginBottom: verticalScale(80),
     alignItems: 'center',
+    justifyContent: 'center',
   },
   selectButton: {
     position: 'absolute',

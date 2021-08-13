@@ -16,15 +16,21 @@ import { useThemedStyles } from '../../../hooks';
 import { Colors, moderateScale, scale, verticalScale } from '../../../theme';
 import { SVG } from '../../../assets';
 import { Segment } from '../../../components';
-import { Strings, StaticData, Routes } from '../../../constants';
+import { Strings, FixedData, Routes } from '../../../constants';
 import { useNavigation } from '@react-navigation/native';
+import { cloneDeep } from 'lodash';
 
 const { AppLogo, Email, Password, Google, Facebook } = SVG;
 
 const useLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [tab, setTab] = useState(0);
   const navigation = useNavigation();
+
+  const onChangeTab = useCallback((value) => {
+    setTab(value);
+  }, []);
 
   const onChangeEmail = useCallback((value) => {
     setEmail(value);
@@ -43,8 +49,10 @@ const useLogin = () => {
   const onPressFacebookLogin = useCallback(() => {}, []);
 
   return {
+    tab,
     email,
     password,
+    onChangeTab,
     onChangeEmail,
     onChangePassword,
     onPressLogin,
@@ -56,8 +64,10 @@ const useLogin = () => {
 const Login = () => {
   const { colors, themedStyles } = useThemedStyles();
   const {
+    tab,
     email,
     password,
+    onChangeTab,
     onChangeEmail,
     onChangePassword,
     onPressLogin,
@@ -94,7 +104,10 @@ const Login = () => {
             <Text style={[styles.loginMessage, { color: colors.textPrimary }]}>
               {Strings.loginMessage}
             </Text>
-            <Segment tabs={StaticData.loginTabData} />
+            <Segment
+              tabs={cloneDeep(FixedData.loginTabData)}
+              onTabChange={onChangeTab}
+            />
             <View
               style={[
                 themedStyles.loginInputContainer,
@@ -154,7 +167,9 @@ const Login = () => {
               style={themedStyles.loginButton}
               onPress={onPressLogin}
             >
-              <Text style={themedStyles.loginButtonText}>{Strings.login}</Text>
+              <Text style={themedStyles.loginButtonText}>
+                {tab === 0 ? Strings.login : Strings.signUp}
+              </Text>
             </TouchableOpacity>
             <View style={styles.loginBorderContainer}>
               <View

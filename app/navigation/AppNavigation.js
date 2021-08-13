@@ -2,10 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Colors } from '../theme';
 import { Routes } from '../constants';
-import { Appearance } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { useThemedStyles } from '../hooks';
 
 //Screens
 import Login from '../modules/Auth/Login/Login';
@@ -13,6 +11,7 @@ import SelectRole from '../modules/Auth/SelectRole/SelectRole';
 import Dashboard from '../modules/Main/Dashboard/Dashboard';
 import Empty from '../modules/Main/Empty/Empty';
 import TabBar from './TabBar';
+import CreateGame from '../modules/Main/CreateGame/CreateGame';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,19 +44,24 @@ const TabStack = () => {
   );
 };
 
-const AppNavigation = () => {
-  const theme = Appearance.getColorScheme();
-  const themType = theme === 'dark' ? Colors.darkTheme : Colors.lightTheme;
+const MainStack = () => {
   return (
-    <>
-      <StatusBar style="auto" />
-      <NavigationContainer theme={themType}>
-        <Stack.Navigator screenOptions={TransitionScreenOptions}>
-          <Stack.Screen name={Routes.Auth} component={AuthStack} />
-          <Stack.Screen name={Routes.Main} component={TabStack} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </>
+    <Stack.Navigator screenOptions={TransitionScreenOptions}>
+      <Stack.Screen name={Routes.Tab} component={TabStack} />
+      <Stack.Screen name={Routes.CreateGame} component={CreateGame} />
+    </Stack.Navigator>
+  );
+};
+
+const AppNavigation = () => {
+  const { themType } = useThemedStyles();
+  return (
+    <NavigationContainer theme={themType}>
+      <Stack.Navigator screenOptions={TransitionScreenOptions}>
+        <Stack.Screen name={Routes.Main} component={MainStack} />
+        <Stack.Screen name={Routes.Auth} component={AuthStack} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

@@ -15,105 +15,120 @@ const TabBar = ({ state, descriptors, navigation }) => {
   return (
     <View
       style={[
-        styles.tabBarContainer,
-        { backgroundColor: colors.background, paddingBottom: insets.bottom },
+        styles.tabBarMainContainer,
+        {
+          backgroundColor: colors.mainBackground,
+          paddingBottom: insets.bottom,
+        },
       ]}
     >
-      {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
-        const label =
-          options.tabBarLabel !== undefined
-            ? options.tabBarLabel
-            : options.title !== undefined
-            ? options.title
-            : route.name;
+      <View
+        style={[
+          styles.tabBarContainer,
+          {
+            backgroundColor: colors.background,
+            paddingBottom: insets.bottom,
+            borderColor: colors.border,
+          },
+        ]}
+      >
+        {state.routes.map((route, index) => {
+          const { options } = descriptors[route.key];
+          const label =
+            options.tabBarLabel !== undefined
+              ? options.tabBarLabel
+              : options.title !== undefined
+              ? options.title
+              : route.name;
 
-        const isFocused = state.index === index;
+          const isFocused = state.index === index;
 
-        let Icon;
+          let Icon;
 
-        switch (label) {
-          case Routes.Dashboard:
-            Icon = DashboardIcon;
-            break;
+          switch (label) {
+            case Routes.Dashboard:
+              Icon = DashboardIcon;
+              break;
 
-          case Routes.Stats:
-            Icon = StatsIcon;
-            break;
+            case Routes.Stats:
+              Icon = StatsIcon;
+              break;
 
-          case Routes.Matches:
-            Icon = FieldIcon;
-            break;
+            case Routes.Matches:
+              Icon = FieldIcon;
+              break;
 
-          case Routes.Rating:
-            Icon = StarIcon;
-            break;
+            case Routes.Rating:
+              Icon = StarIcon;
+              break;
 
-          default:
-            Icon = PlusTabIcon;
-            break;
-        }
-
-        const onPress = () => {
-          const event = navigation.emit({
-            type: 'tabPress',
-            target: route.key,
-            canPreventDefault: true,
-          });
-
-          if (!isFocused && !event.defaultPrevented) {
-            // The `merge: true` option makes sure that the params inside the tab screen are preserved
-            navigation.navigate({ name: route.name, merge: true });
+            default:
+              Icon = PlusTabIcon;
+              break;
           }
-        };
 
-        const onLongPress = () => {
-          navigation.emit({
-            type: 'tabLongPress',
-            target: route.key,
-          });
-        };
+          const onPress = () => {
+            const event = navigation.emit({
+              type: 'tabPress',
+              target: route.key,
+              canPreventDefault: true,
+            });
 
-        return (
-          <TouchableOpacity
-            accessibilityRole="button"
-            accessibilityState={isFocused ? { selected: true } : {}}
-            accessibilityLabel={options.tabBarAccessibilityLabel}
-            testID={options.tabBarTestID}
-            onPress={onPress}
-            onLongPress={onLongPress}
-            style={styles.tabBarItem}
-          >
-            {label === Routes.Profile ? (
-              <View style={styles.tabView}>
-                <View style={themedStyles.tabProfile}>
-                  <Icon stroke={colors.primary} />
+            if (!isFocused && !event.defaultPrevented) {
+              // The `merge: true` option makes sure that the params inside the tab screen are preserved
+              navigation.navigate({ name: route.name, merge: true });
+            }
+          };
+
+          const onLongPress = () => {
+            navigation.emit({
+              type: 'tabLongPress',
+              target: route.key,
+            });
+          };
+
+          return (
+            <TouchableOpacity
+              key={route.key}
+              accessibilityRole="button"
+              accessibilityState={isFocused ? { selected: true } : {}}
+              accessibilityLabel={options.tabBarAccessibilityLabel}
+              testID={options.tabBarTestID}
+              onPress={onPress}
+              onLongPress={onLongPress}
+              style={styles.tabBarItem}
+            >
+              {label === Routes.Profile ? (
+                <View style={styles.tabView}>
+                  <View style={themedStyles.tabProfile}>
+                    <Icon stroke={colors.primary} />
+                  </View>
+                  <Text
+                    style={[
+                      themedStyles.tabTitle,
+                      !isFocused && themedStyles.tabTitleInactive,
+                    ]}
+                  >
+                    {label}
+                  </Text>
                 </View>
-                <Text
-                  style={[
-                    themedStyles.tabTitle,
-                    !isFocused && themedStyles.tabTitleInactive,
-                  ]}
-                >
-                  {label}
-                </Text>
-              </View>
-            ) : (
-              <View style={styles.tabView}>
-                <Icon stroke={isFocused ? colors.primary : colors.inactive} />
-                <Text
-                  style={[
-                    themedStyles.tabTitle,
-                    !isFocused && themedStyles.tabTitleInactive,
-                  ]}
-                >
-                  {label}
-                </Text>
-              </View>
-            )}
-          </TouchableOpacity>
-        );
-      })}
+              ) : (
+                <View style={styles.tabView}>
+                  <Icon stroke={isFocused ? colors.primary : colors.inactive} />
+                  <Text
+                    style={[
+                      themedStyles.tabTitle,
+                      !isFocused && themedStyles.tabTitleInactive,
+                    ]}
+                  >
+                    {label}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          );
+        })}
+      </View>
     </View>
   );
 };
