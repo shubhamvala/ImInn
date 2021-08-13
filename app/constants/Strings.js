@@ -53,6 +53,9 @@ const Strings = {
     'It’s mean that anyone can join the game and see the game in the list of games, so it’s publicly published',
   privateContent:
     'It’s mean that only people that has a generated code given can join the game.',
+  teamA: 'Team A',
+  teamB: 'Team B',
+  joined: 'Joined',
 };
 
 export default Strings;

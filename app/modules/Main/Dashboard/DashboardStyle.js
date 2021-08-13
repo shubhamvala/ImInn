@@ -61,6 +61,31 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: verticalScale(30),
   },
+  headingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: verticalScale(24),
+    paddingHorizontal: scale(20),
+  },
+  roundContainer: {
+    paddingVertical: verticalScale(12),
+    paddingHorizontal: scale(23),
+    minWidth: scale(105),
+    borderRadius: moderateScale(50),
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  successTitle: {
+    fontFamily: Fonts.type.nunitoSans.semiBold,
+    fontSize: moderateScale(13),
+    marginLeft: scale(10),
+  },
+  normalTitle: {
+    fontFamily: Fonts.type.nunitoSans.bold,
+    fontSize: Fonts.size.medium,
+    marginLeft: scale(10),
+  },
 });
 
 export { styles };

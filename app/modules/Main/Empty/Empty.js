@@ -1,12 +1,10 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { useThemedStyles } from '../../../hooks';
 
 const Empty = () => {
-  return (
-    <View>
-      <Text></Text>
-    </View>
-  );
+  const { themedStyles } = useThemedStyles();
+  return <SafeAreaView style={themedStyles.mainContainer}></SafeAreaView>;
 };
 
 export default Empty;

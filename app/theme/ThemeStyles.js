@@ -226,6 +226,139 @@ const styles = (colors) =>
       color: colors.textInactive,
       padding: 0,
     },
+    mainHeaderTitle: {
+      fontFamily: Fonts.type.nunitoSans.bold,
+      fontSize: Fonts.size.h5,
+      color: colors.textPrimary,
+    },
+    listHeaderContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: verticalScale(25),
+      marginLeft: scale(24),
+    },
+    listHeaderTitle: {
+      fontFamily: Fonts.type.nunitoSans.bold,
+      fontSize: Fonts.size.input,
+      color: colors.textPrimary,
+      marginLeft: scale(28),
+    },
+    listHeaderSubTitle: {
+      fontFamily: Fonts.type.nunitoSans.bold,
+      fontSize: Fonts.size.input,
+      color: colors.textPrimaryOpacity40,
+      marginLeft: scale(15),
+    },
+    dashItemContainer: {
+      marginTop: verticalScale(20),
+      padding: moderateScale(20),
+      borderRadius: moderateScale(25),
+      marginHorizontal: scale(20),
+      backgroundColor: colors.background,
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowColor: colors.shadow,
+      shadowOpacity: 0.1,
+      shadowRadius: moderateScale(10),
+      elevation: 5,
+    },
+    dashItemInnerContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    dashItemImageContainer: {
+      width: moderateScale(85),
+      height: moderateScale(85),
+      borderRadius: moderateScale(17),
+      backgroundColor: colors.primaryOpacity10,
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    },
+    dashItemImage: {
+      width: '100%',
+      height: '100%',
+    },
+    dashItemContentContainer: {
+      flex: 1,
+      marginLeft: scale(20),
+    },
+    dashItemContextTextContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    dashItemContentText: {
+      fontFamily: Fonts.type.nunitoSans.bold,
+      fontSize: Fonts.size.h5,
+      color: colors.textPrimary,
+    },
+    dashItemRoundSmallContainer: {
+      paddingVertical: verticalScale(8),
+      paddingHorizontal: scale(10),
+      borderRadius: moderateScale(25),
+      backgroundColor: colors.primaryOpacity10,
+      marginLeft: scale(10),
+    },
+    dashItemRoundContainer: {
+      paddingVertical: verticalScale(8),
+      paddingHorizontal: scale(16),
+      borderRadius: moderateScale(30),
+      backgroundColor: colors.primaryOpacity10,
+      marginTop: verticalScale(13),
+      alignSelf: 'flex-start',
+    },
+    dashItemRoundText: {
+      fontFamily: Fonts.type.nunitoSans.bold,
+      fontSize: Fonts.size.input,
+      color: colors.primary,
+    },
+    dashItemTimeText: {
+      fontFamily: Fonts.type.nunitoSans.regular,
+      fontSize: Fonts.size.medium,
+      color: colors.inactive2Opacity80,
+      marginTop: verticalScale(5),
+    },
+    dashItemUserListMainContainer: {
+      marginTop: verticalScale(15),
+    },
+    dashItemUserListContainer: {
+      width: moderateScale(28),
+      height: moderateScale(28),
+      borderRadius: moderateScale(14),
+      borderWidth: moderateScale(2),
+      borderColor: colors.background,
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    },
+    dashItemUserListMoreContainer: {
+      backgroundColor: colors.primary,
+    },
+    dashItemUserMoreText: {
+      fontFamily: Fonts.type.nunitoSans.semiBold,
+      fontSize: Fonts.size.small,
+      color: Colors.white,
+    },
+    dashItemUserListMargin: {
+      marginLeft: -moderateScale(8),
+    },
+    dashItemButtonContainer: {
+      paddingVertical: verticalScale(16),
+      backgroundColor: colors.primary,
+      borderRadius: moderateScale(30),
+      marginTop: verticalScale(20),
+      alignItems: 'center',
+    },
+    dashItemButtonText: {
+      fontFamily: Fonts.type.nunitoSans.bold,
+      fontSize: Fonts.size.input,
+      color: Colors.white,
+    },
+    dashItemFooterContainer: {
+      height: verticalScale(30),
+    },
   });
 
 export default styles;

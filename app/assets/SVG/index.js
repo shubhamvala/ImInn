@@ -22,6 +22,9 @@ import SquareCheck from './squareCheck.svg';
 import SquareUncheck from './squareUncheck.svg';
 import Bell from './bell.svg';
 import DropDown from './dropdown.svg';
+import Award from './award.svg';
+import AwardLight from './awardLight.svg';
+import Football from './football.svg';
 
 export default {
   AppLogo,
@@ -48,4 +51,7 @@ export default {
   SquareUncheck,
   Bell,
   DropDown,
+  Award,
+  AwardLight,
+  Football,
 };
