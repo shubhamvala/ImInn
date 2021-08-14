@@ -56,6 +56,11 @@ const Strings = {
   teamA: 'Team A',
   teamB: 'Team B',
   joined: 'Joined',
+  joinGame: 'Join Game',
+  join: 'Join',
+  unJoin: 'Un-Join',
+  chat: 'Chat',
+  ratePlayer: 'Rate Player',
 };
 
 export default Strings;

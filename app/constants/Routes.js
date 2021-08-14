@@ -14,6 +14,8 @@ const Routes = {
   Profile: 'Profile',
 
   CreateGame: 'CreateGame',
+  JoinGame: 'JoinGame',
+  RatePlayer: 'RatePlayer',
 };
 
 export default Routes;

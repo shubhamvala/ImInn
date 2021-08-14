@@ -25,6 +25,8 @@ import DropDown from './dropdown.svg';
 import Award from './award.svg';
 import AwardLight from './awardLight.svg';
 import Football from './football.svg';
+import Chat from './chat.svg';
+import ChampionCup from './championCup.svg';
 
 export default {
   AppLogo,
@@ -54,4 +56,6 @@ export default {
   Award,
   AwardLight,
   Football,
+  Chat,
+  ChampionCup,
 };

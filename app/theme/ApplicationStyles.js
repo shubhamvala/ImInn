@@ -48,6 +48,14 @@ const ApplicationStyles = {
     },
   },
   button: {
+    smallButtonContainer: {
+      alignItems: 'center',
+      paddingTop: verticalScale(16),
+      paddingBottom: verticalScale(8),
+    },
+    iconButton: {
+      marginRight: scale(12),
+    },
     primary: {
       height: verticalScale(68),
       alignItems: 'center',

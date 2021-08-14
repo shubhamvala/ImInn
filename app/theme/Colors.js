@@ -28,9 +28,6 @@ const colors = {
     inactive3: '#FAFAFA',
     border: 'rgba(37, 39, 41, 0.1)',
     buttonInactive: 'rgba(37, 39, 41, 0.1)',
-    pickerButton: [77, 170, 188, 1],
-    pickerBG: [229, 229, 229, 1],
-    pickerText: [37, 39, 41, 1],
   },
   darkTheme: {
     ...DarkTheme,
@@ -54,9 +51,6 @@ const colors = {
     inactive3: '#FAFAFA',
     border: 'rgba(255, 255, 255, 0.1)',
     buttonInactive: 'rgba(255, 255, 255, 0.1)',
-    pickerButton: [77, 170, 188, 1],
-    pickerBG: [37, 39, 41, 1],
-    pickerText: [255, 255, 255, 1],
   },
 };
 

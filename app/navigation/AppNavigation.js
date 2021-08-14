@@ -12,6 +12,8 @@ import Dashboard from '../modules/Main/Dashboard/Dashboard';
 import Empty from '../modules/Main/Empty/Empty';
 import TabBar from './TabBar';
 import CreateGame from '../modules/Main/CreateGame/CreateGame';
+import JoinGame from '../modules/Main/JoinGame/JoinGame';
+import RatePlayer from '../modules/Main/RatePlayer/RatePlayer';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,6 +51,8 @@ const MainStack = () => {
     <Stack.Navigator screenOptions={TransitionScreenOptions}>
       <Stack.Screen name={Routes.Tab} component={TabStack} />
       <Stack.Screen name={Routes.CreateGame} component={CreateGame} />
+      <Stack.Screen name={Routes.JoinGame} component={JoinGame} />
+      <Stack.Screen name={Routes.RatePlayer} component={RatePlayer} />
     </Stack.Navigator>
   );
 };

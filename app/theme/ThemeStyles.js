@@ -359,6 +359,110 @@ const styles = (colors) =>
     dashItemFooterContainer: {
       height: verticalScale(30),
     },
+    joinTeamTitle: {
+      fontFamily: Fonts.type.lato.bold,
+      fontSize: Fonts.size.h3,
+      color: colors.textPrimary,
+    },
+    joinTeamOverallContainer: {
+      width: scale(70),
+      height: verticalScale(40),
+      borderRadius: moderateScale(10),
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.primary,
+      marginTop: verticalScale(15),
+    },
+    joinTeamOverallText: {
+      fontFamily: Fonts.type.lato.bold,
+      fontSize: Fonts.size.input,
+      color: Colors.white,
+    },
+    joinTeamVSText: {
+      fontFamily: Fonts.type.lato.bold,
+      fontSize: Fonts.size.h5,
+      color: colors.textPrimary,
+    },
+    joinBorder: {
+      height: moderateScale(2),
+      backgroundColor: colors.border,
+    },
+    joinItemContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: verticalScale(24),
+    },
+    joinItemImageContainer: {
+      width: moderateScale(50),
+      height: moderateScale(50),
+      borderRadius: moderateScale(25),
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.inactive3,
+      overflow: 'hidden',
+    },
+    joinItemOverallContainer: {
+      width: moderateScale(26),
+      height: moderateScale(26),
+      borderRadius: moderateScale(13),
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'absolute',
+      right: -moderateScale(7),
+      top: -moderateScale(7),
+      backgroundColor: colors.primaryLight,
+    },
+    joinItemOverallText: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.small,
+      color: Colors.white,
+    },
+    joinItemTextContainer: {
+      flex: 1,
+      marginLeft: scale(12),
+    },
+    joinItemName: {
+      fontFamily: Fonts.type.lato.bold,
+      fontSize: Fonts.size.input,
+      color: colors.textPrimary,
+    },
+    joinItemRole: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.medium,
+      color: colors.textInactive,
+      marginTop: verticalScale(1),
+    },
+    iconButtonStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: scale(24),
+      paddingVertical: verticalScale(16),
+      borderRadius: moderateScale(30),
+      backgroundColor: colors.primary,
+    },
+    iconButtonText: {
+      fontFamily: Fonts.type.lato.bold,
+      fontSize: Fonts.size.input,
+      color: Colors.white,
+    },
+    rateItemChamContainer: {
+      width: moderateScale(50),
+      height: moderateScale(50),
+      borderRadius: moderateScale(25),
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: moderateScale(2),
+      borderColor: colors.inactive,
+    },
+    rateItemChamContainerActive: {
+      borderWidth: 0,
+      borderColor: Colors.transparent,
+      backgroundColor: colors.primary,
+    },
+    rateItemRatingContainer: {
+      alignSelf: 'flex-start',
+      marginTop: verticalScale(5),
+    },
   });
 
 export default styles;

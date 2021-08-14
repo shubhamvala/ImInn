@@ -32,7 +32,9 @@ const useDashboard = () => {
   const [data, setData] = useState(StaticData.gameData);
   const navigation = useNavigation();
 
-  const onPressMoreDetail = useCallback(() => {}, []);
+  const onPressMoreDetail = useCallback(() => {
+    navigation.navigate(Routes.RatePlayer);
+  }, [navigation]);
 
   const renderEmptyComponent = useCallback(() => {
     return (
@@ -128,7 +130,9 @@ const useDashboard = () => {
 
   const keyExtractorUser = useCallback((item) => item.id.toString(), []);
 
-  const onPressJoinNow = useCallback(() => {}, []);
+  const onPressJoinNow = useCallback(() => {
+    navigation.navigate(Routes.JoinGame);
+  }, [navigation]);
 
   const renderRecGame = useCallback(
     (item) => {
