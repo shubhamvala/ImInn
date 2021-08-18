@@ -463,6 +463,37 @@ const styles = (colors) =>
       alignSelf: 'flex-start',
       marginTop: verticalScale(5),
     },
+    chatLeftBubble: {
+      backgroundColor: colors.inactive2,
+    },
+    chatRightBubble: {
+      backgroundColor: colors.primary,
+    },
+    chatLeftTextStyle: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.label,
+      color: colors.inactive,
+    },
+    chatRightTextStyle: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.label,
+      color: Colors.white,
+    },
+    chatTimeTextStyle: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.medium,
+      color: colors.inactive2,
+    },
+    chatSendMessageInput: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.input,
+      color: colors.textPrimary,
+    },
+    chatSendMessageText: {
+      fontFamily: Fonts.type.lato.regular,
+      fontSize: Fonts.size.regular,
+      color: colors.textInactive,
+    },
   });
 
 export default styles;

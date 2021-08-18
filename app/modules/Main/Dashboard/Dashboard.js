@@ -254,9 +254,7 @@ const useDashboard = () => {
     navigation.navigate(Routes.CreateGame, { onAddNewGame });
   }, [navigation, onAddNewGame]);
 
-  const onPressSearch = useCallback(() => {
-    navigation.navigate(Routes.SelectRole);
-  }, [navigation]);
+  const onPressSearch = useCallback(() => {}, []);
 
   return {
     colors,

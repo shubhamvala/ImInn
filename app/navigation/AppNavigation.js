@@ -9,11 +9,13 @@ import { useThemedStyles } from '../hooks';
 import Login from '../modules/Auth/Login/Login';
 import SelectRole from '../modules/Auth/SelectRole/SelectRole';
 import Dashboard from '../modules/Main/Dashboard/Dashboard';
+import Profile from '../modules/Main/Profile/Profile';
 import Empty from '../modules/Main/Empty/Empty';
 import TabBar from './TabBar';
 import CreateGame from '../modules/Main/CreateGame/CreateGame';
 import JoinGame from '../modules/Main/JoinGame/JoinGame';
 import RatePlayer from '../modules/Main/RatePlayer/RatePlayer';
+import Chat from '../modules/Main/Chat/Chat';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,7 +43,7 @@ const TabStack = () => {
       <Tab.Screen name={Routes.Stats} component={Empty} />
       <Tab.Screen name={Routes.Matches} component={Empty} />
       <Tab.Screen name={Routes.Rating} component={Empty} />
-      <Tab.Screen name={Routes.Profile} component={Empty} />
+      <Tab.Screen name={Routes.Profile} component={Profile} />
     </Tab.Navigator>
   );
 };
@@ -53,6 +55,7 @@ const MainStack = () => {
       <Stack.Screen name={Routes.CreateGame} component={CreateGame} />
       <Stack.Screen name={Routes.JoinGame} component={JoinGame} />
       <Stack.Screen name={Routes.RatePlayer} component={RatePlayer} />
+      <Stack.Screen name={Routes.Chat} component={Chat} />
     </Stack.Navigator>
   );
 };

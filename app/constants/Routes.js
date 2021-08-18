@@ -16,6 +16,7 @@ const Routes = {
   CreateGame: 'CreateGame',
   JoinGame: 'JoinGame',
   RatePlayer: 'RatePlayer',
+  Chat: 'Chat',
 };
 
 export default Routes;

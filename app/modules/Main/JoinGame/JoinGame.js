@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useThemedStyles } from '../../../hooks';
 import { SVG } from '../../../assets';
-import { StaticData, Strings } from '../../../constants';
+import { Routes, StaticData, Strings } from '../../../constants';
 import { styles } from './JoinGameStyle';
 import { cloneDeep } from 'lodash';
 import { Colors, moderateScale } from '../../../theme';
@@ -215,7 +215,9 @@ const useJoinGame = () => {
 
   const keyExtractorTeamB = useCallback((item) => item.id.toString(), []);
 
-  const onPressChat = useCallback(() => {}, []);
+  const onPressChat = useCallback(() => {
+    navigation.navigate(Routes.Chat);
+  }, [navigation]);
 
   return {
     colors,
@@ -310,7 +312,10 @@ const JoinGame = () => {
         </View>
       </ScrollView>
       <View style={styles.smallButtonContainer}>
-        <TouchableOpacity style={themedStyles.iconButtonStyle}>
+        <TouchableOpacity
+          style={themedStyles.iconButtonStyle}
+          onPress={onPressChat}
+        >
           <View style={styles.iconButton}>
             <Chat fill={Colors.white} />
           </View>
